@@ -31,7 +31,7 @@ export function WhyHireMe() {
   ];
 
   return (
-    <section id="why-hire-me" className="py-20 px-10">
+    <section id="why-hire-me" className="py-20 px-4 sm:px-10 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export function WhyHireMe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="rounded-3xl border border-slate-700 bg-slate-900/70 p-6 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
+              className="rounded-3xl border border-slate-700 bg-slate-900/85 p-6 shadow-lg shadow-black/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-slate-700">
                 <reason.icon className="text-white" size={22} />

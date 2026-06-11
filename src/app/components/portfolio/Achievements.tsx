@@ -35,7 +35,7 @@ const achievements: Achievement[] = [
 
 export function Achievements() {
   return (
-    <section id="achievements" className="py-20 px-4">
+    <section id="achievements" className="py-20 px-4 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export function Achievements() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4 }}
-              className="overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/70 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
+              className="overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/85 shadow-lg shadow-black/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
             >
               <div className={`h-2 bg-gradient-to-r ${achievement.color}`} />
               <div className="p-8">

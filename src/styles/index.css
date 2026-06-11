@@ -4,4 +4,22 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* offset for fixed header */
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #020617; /* Slate-950 fallback color to prevent white flashes */
+  -webkit-overflow-scrolling: touch; /* smooth inertia scrolling on iOS */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU promotion utility */
+.will-change-transform {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }

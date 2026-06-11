@@ -15,10 +15,10 @@ import { FloatingElements } from './components/portfolio/FloatingElements';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      {/* <ParticleTrail />
+    <div className="min-h-[100vh] min-h-[100dvh] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative">
+      <ParticleTrail />
       <MouseGradient />
-      <FloatingElements /> */}
+      <FloatingElements />
       <Navigation />
       <main>
         <Hero />

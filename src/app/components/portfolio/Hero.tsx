@@ -27,7 +27,7 @@ export function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-24 px-4">
+    <section id="home" className="min-h-[100vh] min-h-[100dvh] flex items-center pt-24 px-4 bg-slate-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
           <div>
@@ -37,7 +37,7 @@ export function Hero() {
               transition={{ duration: 0.55 }}
               className="mb-8 lg:hidden"
             >
-              <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-slate-900/80 p-4 shadow-2xl shadow-black/20 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-slate-900/90 p-4 shadow-2xl shadow-black/20">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-cyan-400/10" />
                 <div className="relative overflow-hidden rounded-[1.6rem] border border-slate-700 bg-slate-950">
                   <img
@@ -218,7 +218,7 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-transparent to-slate-500/10 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-slate-900/75 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm">
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-slate-900/85 p-6 shadow-2xl shadow-black/20">
               <div className="overflow-hidden rounded-[1.5rem] border border-slate-700 bg-slate-950">
                 <img
                   src="/profile.jpg"

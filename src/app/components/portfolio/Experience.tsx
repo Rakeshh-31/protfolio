@@ -38,7 +38,7 @@ export function Experience() {
   const technologies = ['React', 'JavaScript', 'Git', 'GitHub', 'Agile', 'Slack','Hugging Face', ];
 
   return (
-    <section id="experience" className="py-20 px-4 bg-slate-900/20">
+    <section id="experience" className="py-20 px-4 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export function Experience() {
           >
             <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-8 w-5 h-5 rounded-full bg-gradient-to-br from-blue-400 to-slate-100 ring-8 ring-slate-950" />
 
-            <div className="mx-auto max-w-5xl rounded-3xl border border-slate-700 bg-slate-900/70 p-6 md:p-8 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10">
+            <div className="mx-auto max-w-5xl rounded-3xl border border-slate-700 bg-slate-900/85 p-6 md:p-8 shadow-lg shadow-black/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-3 py-1 text-sm text-blue-100 mb-3">

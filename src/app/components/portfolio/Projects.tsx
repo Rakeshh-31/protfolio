@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ExternalLink, Github, Calendar, Code2, Stethoscope, Rocket, type LucideIcon } from 'lucide-react';
-import { useState, type MouseEvent as ReactMouseEvent } from 'react';
+import { useState, useRef, useEffect, type MouseEvent as ReactMouseEvent } from 'react';
 
 type Project = {
   id: string;
@@ -123,7 +123,7 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-slate-900/30">
+    <section id="projects" className="py-20 px-4 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,33 +148,52 @@ export function Projects() {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const rectRef = useRef<DOMRect | null>(null);
+  const [hasHoverSupport, setHasHoverSupport] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(hover: hover)');
+    setHasHoverSupport(mediaQuery.matches);
+  }, []);
+
+  const handleMouseEnter = (e: ReactMouseEvent<HTMLDivElement>) => {
+    if (!hasHoverSupport) return;
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+    setIsHovered(true);
+  };
 
   const handleMouseMove = (e: ReactMouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    if (!hasHoverSupport || !rectRef.current || !cardRef.current) return;
+    const x = e.clientX - rectRef.current.left;
+    const y = e.clientY - rectRef.current.top;
+    cardRef.current.style.setProperty('--mouse-x', `${x}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${y}px`);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    rectRef.current = null;
   };
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.12 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
-      className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 shadow-xl shadow-black/10 backdrop-blur-sm"
+      className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/90 shadow-xl shadow-black/10 transition-all duration-300 hover:border-blue-400/40"
     >
-      {isHovered && (
+      {isHovered && hasHoverSupport && (
         <div
           className="pointer-events-none absolute inset-0 opacity-30"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59,130,246,0.22), transparent 240px)`,
+            background: `radial-gradient(circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(59,130,246,0.22), transparent 240px)`,
           }}
         />
       )}

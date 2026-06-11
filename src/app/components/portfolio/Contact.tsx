@@ -14,7 +14,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="py-20 px-4 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -4 }}
-                className="group rounded-3xl border border-slate-700 bg-slate-900/70 p-6 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
+                className="group rounded-3xl border border-slate-700 bg-slate-900/85 p-6 shadow-lg shadow-black/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-blue-500/10"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-slate-700 transition-transform duration-300 group-hover:scale-105">
@@ -62,7 +62,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="rounded-3xl border border-slate-700 bg-slate-900/70 p-12 shadow-lg shadow-black/10 backdrop-blur-sm">
+            <div className="rounded-3xl border border-slate-700 bg-slate-900/85 p-12 shadow-lg shadow-black/10">
               <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-slate-700 text-white">
                 <Send size={34} />
               </div>
